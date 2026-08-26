@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#090b12" />
+        <meta name="description" content="monke client" />
+        <title>Schoology - Log In</title>
+        <link rel="icon" href="images/schoology.png" />
+        <link rel="stylesheet" href="/main.css" />
+    </head>
+    <body class="home-page">
+        <div class="intro-overlay" id="intro-overlay">
+            <video
+                id="intro-video"
+                src="video/intro.mp4"
+                autoplay
+                muted
+                playsinline
+                preload="auto"
+            ></video>
+        </div>
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+
+        <header class="site-header">
+            <a class="brand" href="/" aria-label="br4y's home">
+                <img src="images/logo.png" alt="" />
+                <span>monke <span class="brand-accent">client</span></span>
+            </a>
+            <nav class="nav-links" aria-label="Main navigation">
+                <a class="active" href="games.html">Arcade</a>
+                <a href="#featured">Featured</a>
+            </nav>
+            <div class="header-actions">
+                <button class="admin-trigger" id="admin-trigger" type="button">
+                    Admin login
+                </button>
+                <a class="header-cta" href="games.html"
+                    >Play now <span aria-hidden="true">↗</span></a
+                >
+            </div>
+        </header>
+
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-copy">
+                    <p class="eyebrow">
+                        <span class="pulse"></span> The internet's unblocked
+                        paradise.
+                    </p>
+                    <h1 id="hero-title">
+                        Your next<br /><em>favorite game</em><br />is waiting.
+                    </h1>
+                    <p class="hero-description">
+                        Jump into quick thrills, impossible challenges, and
+                        timeless classics. No downloads. No queue. Just play.
+                    </p>
+                    <a class="primary-button" href="games.html"
+                        >Explore the arcade <span aria-hidden="true">↓</span></a
+                    >
+                </div>
+                <div class="hero-art" aria-label="Featured game collage">
+                    <div class="hero-glow"></div>
+                    <div class="hero-card hero-card-back">
+                        <img src="images/mc.png" alt="" />
+                    </div>
+                    <div class="hero-card hero-card-main">
+                        <img src="images/drive-mad.jpg" alt="Drive Mad" />
+                        <div class="hero-card-caption">
+                            <span>PLAY THIS</span><strong>Drive Mad</strong>
+                        </div>
+                    </div>
+                    <div class="hero-card hero-card-front">
+                        <img src="images/bob-the-robber-2.png" alt="" />
+                    </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="featured-section"
+                id="featured"
+                aria-labelledby="featured-title"
+            >
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Hand-picked for you</p>
+                        <h2 id="featured-title">
+                            Trending <span>right now</span>
+                        </h2>
+                    </div>
+                    <a class="text-link" href="games.html"
+                        >View all games <span aria-hidden="true">→</span></a
+                    >
+                </div>
+                <div class="featured-grid">
+                    <a class="feature-tile feature-large" href="games/btd5/">
+                        <img src="images/btd5-hero.png" alt="Vex 6" />
+                        <div class="tile-overlay">
+                            <span class="tile-tag">TOWER DEFENSE</span
+                            ><strong>Bloons TD 5</strong
+                            ><small>Test your limits</small>
+                        </div>
+                    </a>
+                    <a class="feature-tile" href="games/moto-x3m/">
+                        <img src="images/moto-x3m.jpg" alt="Moto X3M" />
+                        <div class="tile-overlay">
+                            <span class="tile-tag">RACING</span
+                            ><strong>Moto X3M</strong>
+                        </div>
+                    </a>
+                    <a class="feature-tile" href="games/retro-bowl/">
+                        <img src="images/retro-bowl.jpg" alt="Retro Bowl" />
+                        <div class="tile-overlay">
+                            <span class="tile-tag">SPORTS</span
+                            ><strong>Retro Bowl</strong>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section
+                class="games-section"
+                id="games"
+                aria-labelledby="games-title"
+            >
+                <div class="section-heading games-heading">
+                    <div>
+                        <p class="eyebrow">Pick your poison</p>
+                        <h2 id="games-title">The <span>arcade</span></h2>
+                    </div>
+                    <div class="game-count" aria-live="polite">
+                        <strong id="game-count">9</strong> games to play
+                    </div>
+                </div>
+                <section
+                    class="collection-section"
+                    id="collection-section"
+                    hidden
+                >
+                    <p class="eyebrow">Staff picks</p>
+                    <div class="collection-grid" id="collection-grid"></div>
+                </section>
+                <div class="toolbar">
+                    <label class="search-box">
+                        <span aria-hidden="true">⌕</span>
+                        <input
+                            id="game-search"
+                            type="search"
+                            placeholder="Search the arcade..."
+                            autocomplete="off"
+                        />
+                        <kbd>/</kbd>
+                    </label>
+                    <p class="sort-hint" id="sort-hint" hidden>
+                        Drag cards to reorder <span id="sort-status"></span>
+                    </p>
+                </div>
+                <div class="game-grid" id="game-grid">
+                    <a
+                        class="game-card"
+                        data-title="bob the robber 2"
+                        href="games/bob-the-robber-2/"
+                        ><div class="card-image">
+                            <img
+                                src="images/bob-the-robber-2.png"
+                                alt="Bob the Robber 2"
+                            /><span class="play-icon">▶</span>
+                        </div>
+                        <div class="card-info">
+                            <span>STEALTH</span
+                            ><strong>Bob the Robber 2</strong>
+                        </div></a
+                    >
+                    <a class="game-card" data-title="vex 7" href="games/vex7/"
+                        ><div class="card-image">
+                            <img src="images/vex7.jpeg" alt="Vex 7" /><span
+                                class="play-icon"
+                                >▶</span
+                            >
+                        </div>
+                        <div class="card-info">
+                            <span>PLATFORMER</span><strong>Vex 7</strong>
+                        </div></a
+                    >
+                    <a class="game-card" data-title="vex 6" href="games/vex6/"
+                        ><div class="card-image">
+                            <img src="images/vex6.jpeg" alt="Vex 6" /><span
+                                class="play-icon"
+                                >▶</span
+                            >
+                        </div>
+                        <div class="card-info">
+                            <span>PLATFORMER</span><strong>Vex 6</strong>
+                        </div></a
+                    >
+                    <a class="game-card" data-title="minecraft" href="games/"
+                        ><div class="card-image">
+                            <img src="images/mc.png" alt="Minecraft" /><span
+                                class="play-icon"
+                                >▶</span
+                            >
+                        </div>
+                        <div class="card-info">
+                            <span>ADVENTURE</span><strong>Minecraft</strong>
+                        </div></a
+                    >
+                    <a
+                        class="game-card"
+                        data-title="moto x3m"
+                        href="games/moto-x3m/"
+                        ><div class="card-image">
+                            <img
+                                src="images/moto-x3m.jpg"
+                                alt="Moto X3M"
+                            /><span class="play-icon">▶</span>
+                        </div>
+                        <div class="card-info">
+                            <span>RACING</span><strong>Moto X3M</strong>
+                        </div></a
+                    >
+                    <a
+                        class="game-card"
+                        data-title="retro bowl"
+                        href="games/retro-bowl/"
+                        ><div class="card-image">
+                            <img
+                                src="images/retro-bowl.jpg"
+                                alt="Retro Bowl"
+                            /><span class="play-icon">▶</span>
+                        </div>
+                        <div class="card-info">
+                            <span>SPORTS</span><strong>Retro Bowl</strong>
+                        </div></a
+                    >
+                    <a
+                        class="game-card"
+                        data-title="drive mad"
+                        href="games/drive-mad/"
+                        ><div class="card-image">
+                            <img
+                                src="images/drive-mad.jpg"
+                                alt="Drive Mad"
+                            /><span class="play-icon">▶</span>
+                        </div>
+                        <div class="card-info">
+                            <span>RACING</span><strong>Drive Mad</strong>
+                        </div></a
+                    >
+                    <a class="game-card" data-title="slope" href="games/slope/"
+                        ><div class="card-image">
+                            <img src="images/slope.jpg" alt="Slope" /><span
+                                class="play-icon"
+                                >▶</span
+                            >
+                        </div>
+                        <div class="card-info">
+                            <span>ARCADE</span><strong>Slope</strong>
+                        </div></a
+                    >
+                    <a
+                        class="game-card"
+                        data-title="moto x3m 2"
+                        href="games/motox3m2/"
+                        ><div class="card-image">
+                            <img
+                                src="images/motox3m2.jpg"
+                                alt="Moto X3M 2"
+                            /><span class="play-icon">▶</span>
+                        </div>
+                        <div class="card-info">
+                            <span>RACING</span><strong>Moto X3M 2</strong>
+                        </div></a
+                    >
+                </div>
+                <p class="empty-state" id="empty-state" hidden>
+                    No games found. Try a different search.
+                </p>
+            </section>
+        </main>
+
+        <div class="modal-backdrop" id="admin-modal" hidden>
+            <section
+                class="admin-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="admin-title"
+            >
+                <button
+                    class="modal-close"
+                    id="modal-close"
+                    type="button"
+                    aria-label="Close admin panel"
+                >
+                    ×
+                </button>
+                <div id="login-view">
+                    <p class="eyebrow">Private access</p>
+                    <h2 id="admin-title">Admin <span>login</span></h2>
+                    <p class="modal-copy">
+                        Sign in to add a new game to the arcade.
+                    </p>
+                    <form id="login-form" class="admin-form">
+                        <label
+                            >Username<input
+                                name="username"
+                                autocomplete="username"
+                                required
+                        /></label>
+                        <label
+                            >Password<input
+                                name="password"
+                                type="password"
+                                autocomplete="current-password"
+                                required
+                        /></label>
+                        <p class="form-error" id="login-error" role="alert"></p>
+                        <button class="primary-button" type="submit">
+                            Enter admin mode <span aria-hidden="true">→</span>
+                        </button>
+                    </form>
+                </div>
+                <div id="admin-view" hidden>
+                    <p class="eyebrow">Admin mode enabled</p>
+                    <h2>Add a <span>game</span></h2>
+                    <p class="modal-copy">
+                        Add a card using an image already in
+                        <code>images/</code> and a game folder or URL.
+                    </p>
+                    <form id="game-form" class="admin-form">
+                        <label
+                            >Game title<input
+                                name="title"
+                                placeholder="e.g. Flappy Bird"
+                                required
+                        /></label>
+                        <div class="form-row">
+                            <label
+                                >Category<input
+                                    name="category"
+                                    placeholder="ARCADE"
+                                    required
+                            /></label>
+                            <label
+                                >Image path<input
+                                    name="image"
+                                    placeholder="images/flappy-bird.jpg"
+                                    required
+                            /></label>
+                        </div>
+                        <label
+                            >Game link<input
+                                name="link"
+                                placeholder="games/flappy-bird/"
+                                required
+                        /></label>
+                        <label class="checkbox-label"
+                            ><input type="checkbox" name="collection" /> Feature
+                            in the collection</label
+                        >
+                        <p class="form-error" id="game-error" role="alert"></p>
+                        <p
+                            class="form-success"
+                            id="game-success"
+                            role="status"
+                        ></p>
+                        <button class="primary-button" type="submit">
+                            Add to the arcade <span aria-hidden="true">+</span>
+                        </button>
+                    </form>
+                    <button
+                        class="logout-button"
+                        id="logout-button"
+                        type="button"
+                    >
+                        Log out
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <footer class="site-footer">
+            <a class="brand" href="/" aria-label="Blazer Games home"
+                ><img src="images/logo.png" alt="" /><span
+                    >monke <span class="brand-accent">client</span></span
+                ></a
+            >
+            <p>Made for people who still love to play.</p>
+            <span class="footer-mark">© 2026 br4y</span>
+        </footer>
+
+        <script>
+            (function () {
+                const overlay = document.getElementById("intro-overlay");
+                const video = document.getElementById("intro-video");
+                if (!overlay || !video) return;
+
+                function dismiss() {
+                    overlay.classList.add("intro-overlay-hide");
+                    overlay.addEventListener(
+                        "transitionend",
+                        () => overlay.remove(),
+                        { once: true },
+                    );
+                    // Fallback in case transitionend doesn't fire.
+                    setTimeout(() => overlay.remove(), 1200);
+                }
+
+                video.addEventListener("ended", dismiss);
+                // If autoplay is blocked or the format can't play, don't leave a stuck overlay.
+                video.addEventListener("error", dismiss);
+                video.play().catch(dismiss);
+                // Absolute failsafe: never let the overlay linger past a few seconds,
+                // no matter what the video element does.
+                setTimeout(dismiss, 6000);
+            })();
+        </script>
+        <script src="script.js?v=admin-login-2"></script>
+    </body>
+</html>
